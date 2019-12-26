@@ -147,10 +147,10 @@ func init() {
 					if len(appConfig.EncryptionKey()) > 0 {
 						endpoints.EncryptionKey = appConfig.EncryptionKey()
 
-						if len(appConfig.PDEPath()) > 0 {
-							endpoints.WorkingDir = appConfig.PDEPath()
+						if len(appConfig.AegisPath()) > 0 {
+							endpoints.WorkingDir = appConfig.AegisPath()
 						} else {
-							panic("app.json must supply a path_to_pde")
+							panic("app.json must supply a path_to_aegis")
 						}
 					} else {
 						panic("app.json must supply a key_id for KMS")
